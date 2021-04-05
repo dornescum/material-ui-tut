@@ -8,7 +8,13 @@ const useStyles =makeStyles((theme)=>({
     pl40:{
         // paddingLeft:40,
         [theme.breakpoints.up('xs')]: {
-         padding:'1.2rem .5rem'
+         // padding:'1.2rem .5rem'
+            paddingTop: theme.spacing(10),
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(1),
+            paddingBottom: theme.spacing(1),
+
+
         },
         [theme.breakpoints.up('sm')]: {
             padding:'1rem .8rem'
@@ -68,7 +74,7 @@ const HomeTop = () => {
 
     return (
         <Paper className={classes.pl40}>
-            <Typography variant='h1' align='left' className={classes.title}> Date generale</Typography>
+            <Typography variant='h1' align='left' className={classes.title} gutterBottom> Date generale</Typography>
             <Typography paragraph align='left' className={classes.para}> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam enim
                 expedita iste iusto, magni velit. Asperiores eaque optio provident sit!
             </Typography>

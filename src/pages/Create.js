@@ -91,8 +91,8 @@ export default function Create() {
     return (
         <div className={classes.root} >
             <Grid container spacing={1} alignItems='center'>
-                <Grid item xs={2} md={2}/>
-                <Grid item xs={10} md={8} >
+                <Grid item />
+                <Grid item xs={12}>
                     <Paper className={classes.paper}>
                         {/*<HomeTop/>*/}
                        {/*------------------*/}

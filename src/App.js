@@ -12,6 +12,7 @@ import ModalitatiPlata from "./pages/ModalitatiPlata/ModalitatiPlata";
 import Resetare from "./pages/Resetare/Resetare";
 import Create from './pages/Create';
 import Navbar from './components/Ui/Navbar'
+// import NavbarDan from "./components/Ui/NavbarDan";
 import Home from "./pages/Home/Home";
 import Date from './pages/ListaJudete/ListaJudete';
 import {ThemeProvider} from '@material-ui/core/styles';
@@ -23,6 +24,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Router>
                 <Navbar/>
+                {/*<NavbarDan/>*/}
                 <Switch>
                     <Route exact path="/">
                         <Home/>
@@ -77,7 +79,7 @@ function App() {
                         <Resetare/>
                     </Route>
 
- <Route path="/logout">
+                    <Route path="/logout">
                         <LogOut/>
                     </Route>
 

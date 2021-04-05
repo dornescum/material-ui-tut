@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: 11,
             // margin: " 0 35px",
             // padding:"5px 40px"
-            padding: theme.spacing(10)
+            padding: theme.spacing(11)
 
         },
         [theme.breakpoints.up('sm')]: {
@@ -85,17 +85,19 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         flexGrow: 1,
-        // padding: theme.spacing(10),
-        margin: "1rem",
-        padding: "60px 50px",
+        padding: theme.spacing(0),
+        // margin: "1rem",
+        // padding: "60px 50px",
         [theme.breakpoints.down('xs')]: {
             // padding: '3rem 0 0.1rem 4rem',
             paddingRight: theme.spacing(0),
             marginRight: theme.spacing(0)
         },
         [theme.breakpoints.up('sm')]: {
-            padding: '3rem 0.5rem 0.1rem 4rem',
-            margin: '0 0.1rem 0 0.2rem'
+            // padding: '3rem 0.5rem 0.1rem 4rem',
+            // margin: '0 0.1rem 0 0.2rem'
+            paddingRight: theme.spacing(0),
+            marginRight: theme.spacing(0)
         },
         [theme.breakpoints.up('md')]: {
             // padding: '60px 10px 1px 55px',
@@ -103,8 +105,10 @@ const useStyles = makeStyles((theme) => ({
             margin: '0 0.1rem 0 0.2rem'
         },
         [theme.breakpoints.up('lg')]: {
-            padding: '60px 5px 5px 50px',
-            margin: '1rem'
+            // padding: '60px 5px 5px 50px',
+            // margin: '1rem'
+            paddingRight: theme.spacing(0),
+            marginRight: theme.spacing(0)
         },
     },
     paper: {

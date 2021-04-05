@@ -86,10 +86,18 @@ const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         overflowX: 'hidden',
-        width: theme.spacing(7) + 1,
+        width: theme.spacing(0) + 1,
         [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(0) + 1,
-            // width: theme.spacing(9) + 1,
+            // width: theme.spacing(7) + 1,
+            width: theme.spacing(30) + 1,
+        },
+        [theme.breakpoints.up('md')]: {
+            // width: theme.spacing(7) + 1,
+            width: theme.spacing(30) + 1,
+        },
+        [theme.breakpoints.up('lg')]: {
+            // width: theme.spacing(7) + 1,
+            width: theme.spacing(30) + 1,
         },
     },
     toolbar: {
@@ -102,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: theme.spacing(5),
     },
     link: {
         backgroundColor: "var(--grey-1)",
@@ -160,6 +168,8 @@ export default function MiniDrawer() {
             </AppBar>
             <Drawer
                 variant="permanent"
+
+
                 className={clsx(classes.drawer, {
                     [classes.drawerOpen]: open,
                     [classes.drawerClose]: !open,
@@ -170,6 +180,7 @@ export default function MiniDrawer() {
                         [classes.drawerClose]: !open,
                     }),
                 }}
+
             >
                 <div className={classes.toolbar}>
                     <IconButton onClick={handleDrawerClose}>
