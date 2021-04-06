@@ -30,30 +30,34 @@ const useStyles = makeStyles((theme) => ({
 
     root: {
         flexGrow: 1,
-        padding: theme.spacing(10),
-        // margin: "1rem",
-        // padding: "60px 50px",
-        [theme.breakpoints.down('xs')]: {
-            // padding: '3rem 0 0.1rem 4rem',
-            paddingRight: theme.spacing(1),
-            paddingTop: theme.spacing(9),
-            paddingLeft: theme.spacing(0),
+        padding: theme.spacing(1),
 
-            marginLeft: theme.spacing(2)
+        [theme.breakpoints.down('xs')]: {
+            paddingRight: theme.spacing(0),
+            paddingTop: theme.spacing(2),
+            paddingLeft: theme.spacing(1),
+
+            // marginLeft: theme.spacing(2)
         },
-        // [theme.breakpoints.up('sm')]: {
-        //     padding: '3rem 0.5rem 0.1rem 4rem',
-        //     margin: '0 0.1rem 0 0.2rem'
-        // },
+        [theme.breakpoints.up('xs')]: {
+            paddingRight: theme.spacing(0),
+            paddingLeft: theme.spacing(0),
+        },
         // [theme.breakpoints.up('md')]: {
         //     // padding: '60px 10px 1px 55px',
         //     padding: '3rem 0.5rem 0.1rem 4rem',
         //     margin: '0 0.1rem 0 0.2rem'
         // },
-        // [theme.breakpoints.up('lg')]: {
-        //     padding: '60px 5px 5px 50px',
-        //     margin: '1rem'
-        // },
+        [theme.breakpoints.up('lg')]: {
+            paddingRight: theme.spacing(0),
+            paddingTop: theme.spacing(1),
+            paddingLeft: theme.spacing(1),
+        },
+        [theme.breakpoints.up('xl')]: {
+            paddingRight: theme.spacing(0),
+            paddingTop: theme.spacing(1),
+            paddingLeft: theme.spacing(2),
+        },
     },
     paper: {
         padding: theme.spacing(0),
@@ -67,15 +71,39 @@ const useStyles = makeStyles((theme) => ({
     //     padding: '0.7rem'
     // },
     form: {
-        padding: '0.1rem',
+        padding: '0.5rem .1rem',
         // padding: theme.spacing(1),
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: theme.spacing(0),
+        },
         [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(1),
-
+            paddingTop: theme.spacing(1),
         },
     },
+    formBig: {
+        padding: '0.5rem .1rem',
+        // [theme.breakpoints.up('sm')]: {
+            // paddingTop: theme.spacing(1),
+            // paddingTop: 3,
+            // paddingBottom: 3,
+            // paddingLeft: theme.spacing(1),
+            // paddingRight: theme.spacing(1),
+
+
+        // },
+    },
     formInput: {
-        padding: '1rem'
+        padding: '1rem .5rem'
+        // padding: '.1rem'
+    },
+    firma: {
+        backgroundColor: "var(--mc-color)",
+        color: "white",
+        padding: '1rem .5rem',
+        "&:hover": {
+            backgroundColor: "var(--blueMain)",
+            transition: "all 1s ease",
+        }
     },
     foto: {
         padding: '0.7rem'
@@ -89,27 +117,21 @@ export default function Create() {
     // const theme = useTheme();
 
     return (
-        <div className={classes.root} >
+        <div className={classes.root}>
             <Grid container spacing={1} alignItems='center'>
-                <Grid item />
+                {/*<Grid item />*/}
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
                         {/*<HomeTop/>*/}
-                       {/*------------------*/}
+                        {/*------------------*/}
                         <form noValidate autoComplete='off'>
                             <Grid container className={classes.form}>
                                 {/*tip autorizat*/}
                                 <Grid item xs={12} lg={3} className={classes.formInput}>
-                                    <Typography variant='h6' align='justify'>Tip autorizat*</Typography>
+                                    <Typography variant='subtitle1' align='center'>Tip autorizat*</Typography>
                                 </Grid>
-                                <Grid item xs={12} lg={9}>
-                                    <Button
-                                        fullWidth
-                                        variant="contained"
-                                        color="primary"
-                                        style={{marginTop: '0.9rem'}}
-                                        size='large'
-                                    >Firma</Button>
+                                <Grid item xs={12} lg={9} className={classes.firma}>
+                                    <Typography variant='subtitle1' align='center'>Firma</Typography>
                                 </Grid>
                                 {/*======Nume=====*/}
                                 <Grid item xs={12} lg={6} className={classes.form}>
@@ -152,7 +174,7 @@ export default function Create() {
                                     </TextField>
                                 </Grid>
                                 {/*=========Descriere=====*/}
-                                <Grid item xs={12} lg={6}>
+                                <Grid item xs={12}>
                                     <TextField
                                         fullWidth
                                         label="descriere"
@@ -161,12 +183,12 @@ export default function Create() {
                                         multiline
                                         rows={5}
                                         required
-                                        className={classes.form}
+                                        className={classes.formBig}
                                     >
                                     </TextField>
                                 </Grid>
                                 {/*========Adresa======*/}
-                                <Grid item xs={12} lg={6}>
+                                <Grid item xs={12}>
                                     <TextField
                                         fullWidth
                                         label="adresa"
@@ -175,7 +197,7 @@ export default function Create() {
                                         multiline
                                         rows={5}
                                         required
-                                        className={classes.form}
+                                        className={classes.formBig}
                                     >
                                     </TextField>
                                 </Grid>
@@ -243,10 +265,11 @@ export default function Create() {
                                     {/*        <PhotoCameraIcon/>*/}
                                     {/*    </Fab>*/}
                                     {/*</Box>*/}
-                                    <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
+                                    <input accept="image/*" className={classes.input} id="icon-button-file"
+                                           type="file"/>
                                     <label htmlFor="icon-button-file">
                                         <IconButton color="primary" aria-label="upload picture" component="span">
-                                            <PhotoCamera  fontSize="large"/>
+                                            <PhotoCamera fontSize="large"/>
                                         </IconButton>
                                     </label>
 
@@ -274,10 +297,10 @@ export default function Create() {
                                 </Grid>
                             </Grid>
                         </form>
-                       {/*------------------*/}
+                        {/*------------------*/}
                     </Paper>
                 </Grid>
-                <Grid item xs={false} md={2}/>
+                {/*<Grid item xs={false} md={2}/>*/}
             </Grid>
         </div>
     )

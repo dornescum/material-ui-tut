@@ -18,6 +18,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import HomeTop from "./HomeTop";
 import HomeFormCompany from "./HomeFormCompany";
+import Create from "../Create";
 
 
 const drawerWith = 240;
@@ -108,7 +109,13 @@ const useStyles = makeStyles((theme) => ({
             // padding: '60px 5px 5px 50px',
             // margin: '1rem'
             paddingRight: theme.spacing(0),
-            marginRight: theme.spacing(0)
+            marginLeft: theme.spacing(-2)
+        },
+        [theme.breakpoints.up('xl')]: {
+            // padding: '60px 5px 5px 50px',
+            // margin: '1rem'
+            paddingRight: theme.spacing(0),
+            marginLeft: theme.spacing(0)
         },
     },
     paper: {
@@ -131,10 +138,14 @@ export default function Home() {
     return (
         <div className={classes.root}>
             <Grid container spacing={1} alignItems='center'>
-                <Grid item xs={12} md={12} lg={12}>
+                <Grid item xs={false} sm={4} md={2} xl={1} >
+
+                </Grid>
+                <Grid item xs={12} sm={8} md={10} xl={11}>
                     <Paper className={classes.paper}>
                         <HomeTop/>
-                        <HomeFormCompany/>
+                        {/*<HomeFormCompany/>*/}
+                        <Create />
                     </Paper>
                 </Grid>
             </Grid>

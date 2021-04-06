@@ -36,12 +36,28 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 // import {Route} from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+
+// import { makeStyles } from '@material-ui/core/styles';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import Typography from '@material-ui/core/Typography';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        justifyContent: "flex-end",
+        alignContent:"center",
         // width: '100%',
         // maxWidth: 360,
         backgroundColor: theme.palette.background.paper,
@@ -101,9 +117,9 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     toolbar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'flex-end',
         padding: theme.spacing(0, 1),
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
@@ -123,7 +139,15 @@ const useStyles = makeStyles((theme) => ({
 
         }
     },
-
+    profile:{
+       fontSize:14,
+        color: theme.palette.colors
+       //  flexGrow:1,
+       //  paddingLeft: '50rem'
+    },
+    title: {
+        flexGrow: 1,
+    },
 
 }));
 
@@ -138,10 +162,19 @@ export default function MiniDrawer() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+// icon
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
+    // ===============
     return (
         <Container className={classes.root}>
-            <CssBaseline/>
+            {/*<CssBaseline/>*/}
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
@@ -153,23 +186,40 @@ export default function MiniDrawer() {
                         color="inherit"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
-                        edge="start"
+                        edge="end"
                         className={clsx(classes.menuButton, {
                             [classes.hide]: open,
                         })}
                     >
                         <MenuIcon/>
                     </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Mini variant drawer
+                    <Typography variant="h6" noWrap className={classes.title}>
+                        Admin
                     </Typography>
 
+
+                    <div className={classes.profile}>
+                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
+
+                        >
+                            Pro Member
+                        </Button>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={anchorEl}
+                            keepMounted
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <MenuItem onClick={handleClose}>Profile</MenuItem>
+                            <MenuItem onClick={handleClose}>My account</MenuItem>
+                            <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        </Menu>
+                    </div>
                 </Toolbar>
             </AppBar>
             <Drawer
                 variant="permanent"
-
-
                 className={clsx(classes.drawer, {
                     [classes.drawerOpen]: open,
                     [classes.drawerClose]: !open,

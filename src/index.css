@@ -4,18 +4,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Light', 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 :root{
   --white: #fff;
   --grey-1: #f9f9f9;
   --grey-2: #f1f1f1;
+  --blueHover:#007bff;
+  --blueMain: #007bff;
+  --mc-color:#4d8dcb;
 
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
-  --radius-4: 4px;
+  --radius-2: 2px;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
@@ -105,3 +110,11 @@ body {
 .font43 { font-size: 43px; }
 
 .uppercase { text-transform: uppercase; }
+a {
+  text-decoration: none;
+  color: var(--blueHover);
+  transition: var(--transition);
+}
+a:hover{
+  color:var(--blueMain) ;
+}
