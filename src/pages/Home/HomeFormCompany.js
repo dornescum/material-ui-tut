@@ -10,7 +10,11 @@ import Fab from '@material-ui/core/Fab';
 // import AddIcon from '@material-ui/icons/Add';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import BackupIcon from '@material-ui/icons/Backup';
-import Box from '@material-ui/core/Box'
+import Box from '@material-ui/core/Box';
+
+
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -165,11 +169,38 @@ const HomeFormCompany = () => {
                 </Grid>
                 {/*=====icons=======*/}
                 <Grid item xs={6} className={classes.foto}>
-                    <Box display={{xs: 'none', sm: 'block'}}>
-                        <Fab color="primary" aria-label="add">
-                            <PhotoCameraIcon/>
-                        </Fab>
-                    </Box>
+                    {/*<Box display={{xs: 'none', sm: 'block'}}>*/}
+                    {/*    <Fab color="primary" aria-label="add">*/}
+                    {/*        <PhotoCameraIcon/>*/}
+                    {/*    </Fab>*/}
+                    {/*</Box>*/}
+                    {/*<Card className={classes.root}>*/}
+                    {/*    <CardActionArea>*/}
+                    {/*        <CardMedia*/}
+                    {/*            className={classes.media}*/}
+                    {/*            image="/static/images/cards/contemplative-reptile.jpg"*/}
+                    {/*            title="Contemplative Reptile"*/}
+                    {/*        />*/}
+                    {/*        <CardContent>*/}
+                    {/*            <Typography gutterBottom variant="h5" component="h2">*/}
+                    {/*                Lizard*/}
+                    {/*            </Typography>*/}
+                    {/*            <Typography variant="body2" color="textSecondary" component="p">*/}
+                    {/*                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging*/}
+                    {/*                across all continents except Antarctica*/}
+                    {/*            </Typography>*/}
+                    {/*        </CardContent>*/}
+                    {/*    </CardActionArea>*/}
+                    {/*    <CardActions>*/}
+                    {/*        <Button size="small" color="primary">*/}
+                    {/*            Share*/}
+                    {/*        </Button>*/}
+                    {/*        <Button size="small" color="primary">*/}
+                    {/*            Learn More*/}
+                    {/*        </Button>*/}
+                    {/*    </CardActions>*/}
+                    {/*</Card>*/}
+
                 </Grid>
                 <Grid item xs={6} className={classes.foto}>
 

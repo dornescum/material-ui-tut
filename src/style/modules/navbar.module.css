@@ -1,0 +1,20 @@
+/*#drawer{*/
+/*    background-color: red;*/
+/*}*/
+ul{
+    font-size: 44px;
+    text-decoration: none !important;
+}
+li{
+    background-color: var(--white);
+    color: var(--black);
+    text-decoration: none !important;
+    transition: var(--transition);
+}
+li:hover{
+    background-color: var(--grey-2);
+}
+
+/*#listLinks{*/
+/*    background-color: blue !important;*/
+/*}*/

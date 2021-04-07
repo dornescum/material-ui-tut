@@ -29,12 +29,28 @@ const useStyles = makeStyles((theme)=>({
         paddingRight: theme.spacing(0),
         // margin: "1rem",
         // padding: "60px",
-        [theme.breakpoints.down('xs')]: {
-            // padding: '3rem 0 0.1rem 4rem',
+        [theme.breakpoints.up('xs')]: {
             paddingRight: theme.spacing(0),
             marginRight: theme.spacing(0),
             marginLeft: theme.spacing(1),
-
+        },
+        [theme.breakpoints.up('sm')]: {
+            paddingRight: theme.spacing(0),
+            marginRight: theme.spacing(0),
+            marginLeft: theme.spacing(18),
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingRight: theme.spacing(0),
+            marginRight: theme.spacing(0),
+            marginLeft: theme.spacing(12),
+        },
+        [theme.breakpoints.up('lg')]: {
+          padding: theme.spacing(0),
+            margin: theme.spacing(0),
+        },
+        [theme.breakpoints.up('xl')]: {
+          padding: theme.spacing(1),
+            marginLeft: theme.spacing(12)
 
         },
     },
@@ -57,7 +73,14 @@ const useStyles = makeStyles((theme)=>({
     },
     para:{
         padding: theme.spacing(1)
-    }
+    },
+    paper: {
+        paddingTop: theme.spacing(2),
+        // paddingLeft: theme.spacing(12),
+        paddingRight: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
 }))
 
 export default function ListaJudete() {
@@ -65,11 +88,11 @@ export default function ListaJudete() {
 // dialog
     return (
         <Grid  className={classes.root }>
-            <Grid item container>
+            <Grid  container alignItems='center'>
 
-            <Grid item xs={2} sm={2}/>
-            <Grid item container xs={10} sm={8} alignItems='center'>
-                <Paper elevation={5} style={{marginBottom:"1rem"}}>
+            <Grid item xs={false} sm={2} xl={1}/>
+            <Grid item  xs={12} sm={10} xl={11} className={classes.paper}>
+                <Paper elevation={5}  style={{marginBottom:"1rem"}}>
                     <Typography variant='h1' className={classes.title}>
                         Lista judete
                     </Typography>
@@ -88,7 +111,7 @@ export default function ListaJudete() {
                 <JudeteTable />
 
             </Grid>
-            <Grid item xs={false} sm={2}/>
+
             </Grid>
         </Grid>
 

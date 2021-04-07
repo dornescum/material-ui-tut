@@ -22,7 +22,14 @@ import Box from "@material-ui/core/Box";
 import Fab from "@material-ui/core/Fab";
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import BackupIcon from "@material-ui/icons/Backup";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import DeleteIcon from '@material-ui/icons/Delete';
 // import HomeFormCompany from "../pages/Home/HomeFormCompany";
+
 
 
 // const drawerWith = 240;
@@ -111,6 +118,9 @@ const useStyles = makeStyles((theme) => ({
     input: {
         display: 'none',
     },
+    media: {
+        height: 140,
+    },
 }))
 export default function Create() {
     const classes = useStyles()
@@ -128,7 +138,7 @@ export default function Create() {
                             <Grid container className={classes.form}>
                                 {/*tip autorizat*/}
                                 <Grid item xs={12} lg={3} className={classes.formInput}>
-                                    <Typography variant='subtitle1' align='center'>Tip autorizat*</Typography>
+                                    <Typography variant='subtitle1' align='center' >Tip autorizat*</Typography>
                                 </Grid>
                                 <Grid item xs={12} lg={9} className={classes.firma}>
                                     <Typography variant='subtitle1' align='center'>Firma</Typography>
@@ -259,41 +269,133 @@ export default function Create() {
                                     </TextField>
                                 </Grid>
                                 {/*=====icons=======*/}
-                                <Grid item xs={6} className={classes.foto}>
-                                    {/*<Box display={{xs: 'none', sm: 'block'}}>*/}
-                                    {/*    <Fab color="primary" aria-label="add">*/}
-                                    {/*        <PhotoCameraIcon/>*/}
-                                    {/*    </Fab>*/}
-                                    {/*</Box>*/}
-                                    <input accept="image/*" className={classes.input} id="icon-button-file"
-                                           type="file"/>
-                                    <label htmlFor="icon-button-file">
-                                        <IconButton color="primary" aria-label="upload picture" component="span">
-                                            <PhotoCamera fontSize="large"/>
-                                        </IconButton>
-                                    </label>
-
-
-                                </Grid>
-                                <Grid item xs={6} className={classes.foto}>
+                                <Grid item xs={12} lg={6} className={classes.foto}>
 
                                     {/*<Fab color="primary" aria-label="add">*/}
                                     {/*    <BackupIcon/>*/}
                                     {/*</Fab>*/}
 
-                                    <input
-                                        accept="image/*"
-                                        className={classes.input}
-                                        id="contained-button-file"
-                                        multiple
-                                        type="file"
-                                    />
-                                    <label htmlFor="contained-button-file">
-                                        <Button variant="contained" color="primary" component="span">
-                                            Upload
-                                        </Button>
-                                    </label>
+                                    {/*<input*/}
+                                    {/*    accept="image/*"*/}
+                                    {/*    className={classes.input}*/}
+                                    {/*    id="contained-button-file"*/}
+                                    {/*    multiple*/}
+                                    {/*    type="file"*/}
+                                    {/*/>*/}
+                                    {/*<label htmlFor="contained-button-file">*/}
+                                    {/*    <Button variant="contained" color="primary" component="span">*/}
+                                    {/*        Upload*/}
+                                    {/*    </Button>*/}
+                                    {/*</label>*/}
 
+
+                                    <Card className={classes.root}>
+                                        <CardActionArea>
+                                            <CardMedia
+                                                className={classes.media}
+                                                image="https://images.unsplash.com/photo-1617785899222-fe06b15b6dd5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                                                title="Contemplative Reptile"
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h5" component="h2">
+                                                    Logo listare
+                                                </Typography>
+                                                <Typography variant="body2" color="textSecondary" component="p">
+                                                    190 px/70 px
+                                                </Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <CardActions>
+                                            {/*<Button size="small" color="primary">*/}
+                                            {/*    Share*/}
+                                            {/*</Button>*/}
+                                            {/*<Button size="small" color="primary">*/}
+                                            {/*    Learn More*/}
+                                            {/*</Button>*/}
+                                            <input
+                                                accept="image/*"
+                                                className={classes.input}
+                                                id="contained-button-file"
+                                                multiple
+                                                type="file"
+                                            />
+                                            <label htmlFor="contained-button-file">
+                                                <Button variant="contained" color="primary" component="span">
+                                                    Upload
+                                                </Button>
+                                            </label>
+
+                                            <Button variant="contained" color="primary" component="span">
+                                                <DeleteIcon />
+                                            </Button>
+
+
+                                        </CardActions>
+                                    </Card>
+                                </Grid>
+                                <Grid item xs={12} lg={6} className={classes.foto}>
+
+                                    {/*<Fab color="primary" aria-label="add">*/}
+                                    {/*    <BackupIcon/>*/}
+                                    {/*</Fab>*/}
+
+                                    {/*<input*/}
+                                    {/*    accept="image/*"*/}
+                                    {/*    className={classes.input}*/}
+                                    {/*    id="contained-button-file"*/}
+                                    {/*    multiple*/}
+                                    {/*    type="file"*/}
+                                    {/*/>*/}
+                                    {/*<label htmlFor="contained-button-file">*/}
+                                    {/*    <Button variant="contained" color="primary" component="span">*/}
+                                    {/*        Upload*/}
+                                    {/*    </Button>*/}
+                                    {/*</label>*/}
+
+
+                                    <Card className={classes.root} elevation={0}>
+                                        <CardActionArea>
+                                            <CardMedia
+                                                className={classes.media}
+                                                image="https://images.unsplash.com/photo-1483203257148-66ee23170d09?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                                                title="Contemplative Reptile"
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h5" component="h2">
+                                                   Logo listare
+                                                </Typography>
+                                                <Typography variant="body2" color="textSecondary" component="p">
+                                                250 px/250 px
+                                                </Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <CardActions>
+                                            {/*<Button size="small" color="primary">*/}
+                                            {/*    Share*/}
+                                            {/*</Button>*/}
+                                            {/*<Button size="small" color="primary">*/}
+                                            {/*    Learn More*/}
+                                            {/*</Button>*/}
+                                            <input
+                                                accept="image/*"
+                                                className={classes.input}
+                                                id="contained-button-file"
+                                                multiple
+                                                type="file"
+                                            />
+                                            <label htmlFor="contained-button-file">
+                                                <Button variant="contained" color="primary" component="span">
+                                                    Upload
+                                                </Button>
+                                            </label>
+
+                                                <Button variant="contained" color="primary" component="span">
+                                                   <DeleteIcon />
+                                                </Button>
+
+
+                                        </CardActions>
+                                    </Card>
                                 </Grid>
                             </Grid>
                         </form>

@@ -1,3 +1,5 @@
+@import "modules/navbar.module.css";
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -9,6 +11,7 @@ body {
 }
 :root{
   --white: #fff;
+  --black: #000000;
   --grey-1: #f9f9f9;
   --grey-2: #f1f1f1;
   --blueHover:#007bff;
@@ -111,7 +114,7 @@ body {
 
 .uppercase { text-transform: uppercase; }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--blueHover);
   transition: var(--transition);
 }

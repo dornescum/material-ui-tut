@@ -34,6 +34,7 @@ import HistoryIcon from '@material-ui/icons/History';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Box from "@material-ui/core/Box";
 
 // import {Route} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
@@ -50,6 +51,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import logo from '../../utils/img/logo.png'
+
 
 const drawerWidth = 240;
 
@@ -60,7 +63,11 @@ const useStyles = makeStyles((theme) => ({
         alignContent:"center",
         // width: '100%',
         // maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
+        // backgroundColor: theme.palette.background.paper,
+        "&:hover": {
+            backgroundColor: "black"
+        }
+
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -124,30 +131,45 @@ const useStyles = makeStyles((theme) => ({
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
     },
+    // toolbar: theme.mixins.toolbar,
+
     content: {
         flexGrow: 1,
         padding: theme.spacing(5),
-    },
-    link: {
-        backgroundColor: "var(--grey-1)",
-        color: "black",
-        textDecoration: "none",
-        '&:hover': {
-            backgroundColor: "var(--grey-2)",
-            transition: "var(--transition)",
-            textDecoration: "none",
+        // backgroundColor: theme.palette.background.default,
 
-        }
     },
+    // link: {
+    //     // backgroundColor: "var(--grey-1)",
+    //     // backgroundColor: theme.palette,
+    //     color: "black",
+    //     // color: theme.palette.common.black,
+    //
+    //     // textDecoration: "none",
+    //     '&:hover': {
+    //         color: "grey",
+    //         transition: "var(--transition)",
+    //         // backgroundColor: theme.palette,
+    //
+    //         // textDecoration: "none",
+    //     //
+    //     }
+    // },
     profile:{
        fontSize:14,
-        color: theme.palette.colors
+        // color: theme.palette.colors
        //  flexGrow:1,
        //  paddingLeft: '50rem'
+        color: theme.palette.common.white,
+
     },
     title: {
         flexGrow: 1,
     },
+    logoNav:{
+        height: 50,
+        width:200
+    }
 
 }));
 
@@ -194,13 +216,15 @@ export default function MiniDrawer() {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap className={classes.title}>
-                        Admin
+                       Admin
                     </Typography>
+                    <Box display={{ xs: 'none', sm: 'block' }}>
+                        <img src={logo} className={classes.logoNav}  style={{backgroundColor:"white"}} alt=""/>
 
-
+                    </Box>
                     <div className={classes.profile}>
                         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
-
+                                className={classes.profile}
                         >
                             Pro Member
                         </Button>
@@ -219,6 +243,7 @@ export default function MiniDrawer() {
                 </Toolbar>
             </AppBar>
             <Drawer
+                id='drawer'
                 variant="permanent"
                 className={clsx(classes.drawer, {
                     [classes.drawerOpen]: open,
@@ -238,7 +263,7 @@ export default function MiniDrawer() {
                     </IconButton>
                 </div>
                 <Divider/>
-                <List className={classes.link}>
+                <List id='listLinks'>
                     <Link href="/">
                         <ListItem>
                             <ListItemIcon>
