@@ -51,7 +51,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import logo from '../../utils/img/logo.png'
+import EmailIcon from '@material-ui/icons/Email';
+import logo from '../../utils/img/logo.png';
 
 
 const drawerWidth = 240;
@@ -169,8 +170,11 @@ const useStyles = makeStyles((theme) => ({
     logoNav:{
         height: 50,
         width:200
-    }
-
+    },
+    general:{
+        // background: rgb(2,0,36),
+        background: "linear-gradient(90deg, rgba(228,228,231,1) 23%, rgba(228,218,218,0.31974796754639356) 60%, rgba(255,255,255,0.31974796754639356) 86%)"
+}
 }));
 
 export default function MiniDrawer() {
@@ -264,12 +268,18 @@ export default function MiniDrawer() {
                 </div>
                 <Divider/>
                 <List id='listLinks'>
+                    <ListItem  className={classes.general}>
+                        {/*<ListItemIcon>*/}
+                            {/*<HomeIcon/>*/}
+                        {/*</ListItemIcon>*/}
+                        <ListItemText primary={"Datele firmei /PFA"}/>
+                    </ListItem>
                     <Link href="/">
                         <ListItem>
                             <ListItemIcon>
                                 <HomeIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Home"} className={classes.link}/>
+                            <ListItemText primary={"Date principale"} className={classes.link}/>
                         </ListItem>
                     </Link>
 
@@ -322,7 +332,14 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Tipuri de lucrari"} className={classes.link}/>
                         </ListItem>
                     </Link>
-
+                    {/*===========*/}
+                    <ListItem  className={classes.general}>
+                        <ListItemIcon>
+                            <EmailIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary={"Contact"}/>
+                    </ListItem>
+                    {/*===========*/}
                     <Link href="/mesaje">
                         <ListItem>
                             <ListItemIcon>

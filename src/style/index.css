@@ -14,9 +14,12 @@ body {
   --black: #000000;
   --grey-1: #f9f9f9;
   --grey-2: #f1f1f1;
-  --blueHover:#007bff;
-  --blueMain: #007bff;
+  --blue-hover:#007bff;
+  --blue-main: #007bff;
   --mc-color:#4d8dcb;
+  --clr-pro:#87b87f;
+  /*--clr-standard:#428bca;*/
+  --clr-judet:#6fb3e0;
 
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;

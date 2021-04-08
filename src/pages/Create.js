@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
         color: "white",
         padding: '1rem .5rem',
         "&:hover": {
-            backgroundColor: "var(--blueMain)",
+            backgroundColor: "var(--blue-main)",
             transition: "all 1s ease",
         }
     },

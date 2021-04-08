@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme)=>({
             marginLeft: theme.spacing(12),
         },
         [theme.breakpoints.up('lg')]: {
-          padding: theme.spacing(0),
-            margin: theme.spacing(0),
+          paddingLeft: theme.spacing(1),
+            marginLeft: theme.spacing(2),
         },
         [theme.breakpoints.up('xl')]: {
           padding: theme.spacing(1),
@@ -72,13 +72,14 @@ const useStyles = makeStyles((theme)=>({
         },
     },
     para:{
-        padding: theme.spacing(1)
+        paddingLeft: theme.spacing(2),
+        paddingBottom:theme.spacing(1)
     },
     paper: {
         paddingTop: theme.spacing(2),
         // paddingLeft: theme.spacing(12),
         paddingRight: theme.spacing(2),
-        textAlign: 'center',
+        // textAlign: 'center',
         color: theme.palette.text.secondary,
     },
 }))
@@ -97,14 +98,18 @@ export default function ListaJudete() {
                         Lista judete
                     </Typography>
                     <Typography  className={classes.para}>
-                                    dsdasdasd ad asd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet et excepturi nisi odit reprehenderit repudiandae vero? A amet architecto delectus doloribus expedita fuga illum ipsa itaque iure, laborum magni maxime modi natus necessitatibus nihil omnis optio reprehenderit sunt tenetur ullam? Aliquam aliquid aspernatur autem consectetur consequatur dolorem dolores eius,
+                        Aceasta este lista de judete curente in care va desfasurati activitatea. Un judet este echivalentul unui abonament, iar acestea pot fi de 3 tipuri: Free, Standard si Pro.
+
                     </Typography>
                      <Typography  className={classes.para}>
-                        dsdasdasd ad asd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet et excepturi nisi odit reprehenderit repudiandae vero? A amet architecto delectus doloribus expedita fuga illum ipsa itaque iure, laborum magni maxime modi natus necessitatibus nihil omnis optio reprehenderit sunt tenetur ullam? Aliquam aliquid aspernatur autem consectetur consequatur dolorem dolores eius,
-                    </Typography>
+                         Fiecare autorizat are dreptul la un singur abonament de tip Free. In momentul in care se doreste trecerea la abonament de tip Standard sau Pro, atunci abonamentul Free trebuie anulat.
+                     </Typography>
+                     <Typography  className={classes.para}>
+                         Un autorizat poate detine mai multe abonamente de tip Standard si Pro atata timp cat sunt pe judete diferite. Trebuie mentionat, ca abonamentele Pro sunt unice pe judet.
+                     </Typography>
+
   <Typography  className={classes.para}>
-                        dsdasdasd ad asd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet et excepturi nisi odit reprehenderit repudiandae vero? <a
-      href="#" style={{color:'primary'}}>dsadasdas adasd asd</a>,
+      Pentru mai multe detalii si preturi consultati <a href="#" style={{color:'var(--mc-color)'}}> lista de prezentare a abonamentelor . </a>
                     </Typography>
 
                 </Paper>

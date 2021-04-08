@@ -7,17 +7,51 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from "@material-ui/core/Button";
+// import Trophy from '../../utils/svg/trophy.svg'
 
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
+    btnPro:{
+        backgroundColor:"var(--clr-pro)",
+        color:"var(--white)",
+        padding:".3rem .5rem",
+        width:"7rem",
+        "&:hover":{
+            backgroundColor:"var(--mc-color)",
+        }
+    },
+    btnStandard:{
+        backgroundColor:"var(--mc-color)",
+        color:"var(--white)",
+        padding:".3rem .5rem",
+        width:"7rem",
+        "&:hover":{
+            backgroundColor:"var(--blue-hover)",
+        }
+    },
+    btnCounty:{
+        backgroundColor:"var(--mc-color)",
+        fontSize:12,
+        color:"var(--white)",
+        padding:".3rem .5rem",
+        width:"7rem",
+        "&:hover":{
+            backgroundColor:"var(--blue-hover)",
+        }
+    },
+
 });
 
 // function createData(name, calories, fat, carbs, protein) {
 //     return { name, calories, fat, carbs, protein };
 // }
 function createData(number, license, county, from, to, subscription, status, addCounty) {
+    // if(license ==='Pro'){
+    // license.classList.add('btnPro')
+    // }
     return { number, license, county, from, to, subscription, status, addCounty };
 }
 
@@ -43,7 +77,11 @@ export default function JudeteTable() {
                         <TableCell>Pana la</TableCell>
                         <TableCell>Valoare abonament</TableCell>
                         <TableCell>Status</TableCell>
-                        <TableCell>Adauga Judet</TableCell>
+                        <TableCell>
+                            <Button className={classes.btnCounty}>
+                            Adauga Judet
+                            </Button>
+                            </TableCell>
                         {/*align="right"*/}
                     </TableRow>
                 </TableHead>
@@ -53,13 +91,28 @@ export default function JudeteTable() {
                             <TableCell component="th" scope="row">
                                 {row.number}
                             </TableCell>
-                            <TableCell color='primary'>{row.license}</TableCell>
-                            <TableCell>{row.county}</TableCell>
+                            <TableCell color='primary'>
+                                <Button className={classes.btnPro}>
+                                {row.license}
+                                </Button>
+                            </TableCell>
+                            <TableCell>
+                                    {row.county}
+                                </TableCell>
                             <TableCell>{row.from}</TableCell>
                             <TableCell>{row.to}</TableCell>
                             <TableCell>{row.subscription}</TableCell>
-                            <TableCell>{row.status}</TableCell>
-                            <TableCell>{row.addCounty}</TableCell>
+                            <TableCell>
+                                <Button className={classes.btnPro}
+                                >
+                                {row.status}
+                                </Button>
+                                </TableCell>
+                            <TableCell>
+                                <Button className={classes.btnStandard}>
+                                {row.addCounty}
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
