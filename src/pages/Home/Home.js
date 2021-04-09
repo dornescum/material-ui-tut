@@ -137,7 +137,7 @@ export default function Home() {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={1} alignItems='center'>
+            <Grid container spacing={0} alignItems='center'>
                 <Grid item xs={false} sm={4} md={2} xl={1} >
 
                 </Grid>

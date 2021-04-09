@@ -269,9 +269,9 @@ export default function MiniDrawer() {
                 <Divider/>
                 <List id='listLinks'>
                     <ListItem  className={classes.general}>
-                        {/*<ListItemIcon>*/}
-                            {/*<HomeIcon/>*/}
-                        {/*</ListItemIcon>*/}
+                        <ListItemIcon>
+                            <HomeIcon/>
+                        </ListItemIcon>
                         <ListItemText primary={"Datele firmei /PFA"}/>
                     </ListItem>
                     <Link href="/">
@@ -282,15 +282,6 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Date principale"} className={classes.link}/>
                         </ListItem>
                     </Link>
-
-                    <Link href="/create">
-                        <ListItem>
-                            <ListItemIcon>
-                                <AccountBoxIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={"Create"} className={classes.link}/>
-                        </ListItem>
-                    </Link>
                     <Link href="/desprefirma1">
                         <ListItem>
                             <ListItemIcon>
@@ -299,15 +290,10 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Despre firma"} className={classes.link}/>
                         </ListItem>
                     </Link>
-                    {/*stiu de greseala am incurcxat paginile in legaturio*/}
-                    <Link href="/listajudete">
-                        <ListItem>
-                            <ListItemIcon>
-                                <DateRangeIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={"Lista judete"} className={classes.link}/>
-                        </ListItem>
-                    </Link>
+
+
+
+
                     <Link href="/datefiscale">
                         <ListItem>
                             <ListItemIcon>
@@ -356,22 +342,33 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Date contact"} className={classes.link}/>
                         </ListItem>
                     </Link>
+
+                    {/*======abonamente=====*/}
+                    <ListItem  className={classes.general}>
+                        <ListItemIcon>
+                            <EmailIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary={"Abonamente"}/>
+                    </ListItem>
+                    {/*===========*/}
+
                     <Link href="/tipuriabonamente">
                         <ListItem>
                             <ListItemIcon>
                                 <CreditCardIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Tipuri de abonamente"} className={classes.link}/>
+                            <ListItemText primary={"Tipuri abonamente"} className={classes.link}/>
                         </ListItem>
                     </Link>
-                    <Link href="/judete">
+                    <Link href="/listajudete">
                         <ListItem>
                             <ListItemIcon>
-                                <BallotIcon/>
+                                <DateRangeIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Judete"} className={classes.link}/>
+                            <ListItemText primary={"Lista judete"} className={classes.link}/>
                         </ListItem>
                     </Link>
+
                     <Link href="/istoric">
                         <ListItem>
                             <ListItemIcon>
@@ -388,6 +385,53 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Modalitai de plata"} className={classes.link}/>
                         </ListItem>
                     </Link>
+
+                    {/*======Statistici=====*/}
+                    <ListItem  className={classes.general}>
+                        <ListItemIcon>
+                            <EmailIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary={"Statistici"}/>
+                    </ListItem>
+                    {/*===========*/}
+
+                    <Link href="/resetare">
+                        <ListItem>
+                            <ListItemIcon>
+                                <RotateLeftIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary={"Generale"} className={classes.link}/>
+                        </ListItem>
+                    </Link>
+                    <Link href="/judete">
+                        <ListItem>
+                            <ListItemIcon>
+                                <BallotIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary={"Judete"} className={classes.link}/>
+                        </ListItem>
+                    </Link>
+                    <Link href="/create">
+                        <ListItem>
+                            <ListItemIcon>
+                                <AccountBoxIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary={"Individuale"} className={classes.link}/>
+                        </ListItem>
+                    </Link>
+
+
+
+
+                    {/*======administrativ=====*/}
+                    <ListItem  className={classes.general}>
+                        <ListItemIcon>
+                            <EmailIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary={"Administrativ"}/>
+                    </ListItem>
+                    {/*===========*/}
+
                     <Link href="/resetare">
                         <ListItem>
                             <ListItemIcon>
@@ -404,7 +448,14 @@ export default function MiniDrawer() {
                             <ListItemText primary={"Log Out"} className={classes.link}/>
                         </ListItem>
                     </Link>
-
+                    <Link href="/create">
+                        <ListItem>
+                            <ListItemIcon>
+                                <AccountBoxIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary={"Create"} className={classes.link}/>
+                        </ListItem>
+                    </Link>
 
                 </List>
                 <Divider/>
