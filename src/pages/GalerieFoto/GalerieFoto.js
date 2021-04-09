@@ -95,7 +95,7 @@ export default function GalerieFoto() {
                 <Grid item  xs={12} sm={10} xl={11} className={classes.paper}>
                     <Paper elevation={5}  style={{marginBottom:"1rem"}}>
                         <Typography variant='h1' className={classes.title}>
-                            Lista judete
+                          Galerie Foto
                         </Typography>
                         {/*<Typography  className={classes.para}>*/}
                         {/*    Aceasta este lista de judete curente in care va desfasurati activitatea. Un judet este echivalentul unui abonament, iar acestea pot fi de 3 tipuri: Free, Standard si Pro.*/}
