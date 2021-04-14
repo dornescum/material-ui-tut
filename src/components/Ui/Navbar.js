@@ -22,7 +22,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import {Container} from "@material-ui/core";
+import {Container, ListItemAvatar} from "@material-ui/core";
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
@@ -53,11 +53,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import EmailIcon from '@material-ui/icons/Email';
 import logo from '../../utils/img/logo.png';
+import BrowserRouter from 'react-router-dom'
 // import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -169,8 +169,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     logoNav:{
-        height: 50,
+        height: 60,
         width:200,
+        padding: "0"
         // flexGrow: 1,
 
     },
@@ -180,7 +181,8 @@ const useStyles = makeStyles((theme) => ({
 }
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
+    console.log(props)
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -223,19 +225,20 @@ export default function MiniDrawer() {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap className={classes.title}>
-                      Admin
+
                     </Typography>
                     <Box display={{ xs: 'none', sm: 'block' }}>
-                        <img src={logo} className={classes.logoNav}  style={{backgroundColor:"white"}} alt=""/>
+                        {/*<img src={logo} className={classes.logoNav}  style={{backgroundColor:"white"}} alt=""/>*/}
 
                     </Box>
                     <div className={classes.profile}>
                         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
-                                className={classes.profile}
+
                         >
                             {/*Pro Member*/}
-                            <ListItemIcon>
-                                <AccountCircleIcon/>
+                            <ListItemIcon  style={{color:"white"}}>
+                                Pro Member
+                                <AccountCircleIcon style={{color:"white" , paddingLeft:"10px"}}/>
                             </ListItemIcon>
                         </Button>
                         <Menu
@@ -243,11 +246,13 @@ export default function MiniDrawer() {
                             anchorEl={anchorEl}
                             keepMounted
                             open={Boolean(anchorEl)}
-                            onClose={handleClose}
+                            onClose={setAnchorEl}
                         >
                             <MenuItem onClick={handleClose}>Profile</MenuItem>
                             <MenuItem onClick={handleClose}>My account</MenuItem>
-                            <MenuItem onClick={handleClose}>Logout</MenuItem>
+                            <MenuItem onClick={ handleClose}>
+                                Log Out
+                            </MenuItem>
                         </Menu>
                     </div>
                 </Toolbar>
@@ -274,6 +279,11 @@ export default function MiniDrawer() {
                 </div>
                 <Divider/>
                 <List id='listLinks'>
+                    <ListItem style={{padding:"0 16px"}}>
+                        <ListItemAvatar>
+                            <img src={logo} className={classes.logoNav}  alt=""/>
+                        </ListItemAvatar>
+                    </ListItem>
                     <ListItem  className={classes.general}>
                         <ListItemIcon>
                             <HomeIcon/>
@@ -476,3 +486,4 @@ export default function MiniDrawer() {
         </Container>
     );
 }
+

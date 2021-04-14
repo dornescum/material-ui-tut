@@ -1,16 +1,12 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from '@material-ui/icons/Save';
-import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -161,9 +157,6 @@ export default function TipuriLucrariMain() {
                 <Grid item align='center' xs={12}>
                     <Button variant="contained" color="primary" component="span" startIcon={<SaveIcon />}  className={classes.btn}>
                         Salvare
-                    </Button>
-                    <Button variant="contained" color="primary" component="span" startIcon={<RotateLeftIcon />}  className={classes.btn}>
-                        Resetare
                     </Button>
                 </Grid>
 

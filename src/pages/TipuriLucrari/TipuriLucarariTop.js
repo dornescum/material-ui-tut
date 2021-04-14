@@ -36,8 +36,6 @@ const TipuriLucrariTop= () =>{
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-
-
         </div>
     )
 }
