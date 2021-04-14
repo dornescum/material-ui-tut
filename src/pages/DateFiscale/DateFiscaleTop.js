@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const TipuriLucrariTop= () =>{
+const DateFiscaleTop= () =>{
     const classes = useStyles();
 
     return (
@@ -24,15 +24,15 @@ const TipuriLucrariTop= () =>{
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography className={classes.heading} variant='h4'>Tipuri de lucrari</Typography>
+                    <Typography className={classes.heading} variant='h4'>Date fiscale</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Alegeti din lista de mai jos tipurile de lucrari prestate.
+                       Actualizati datele fiscale ale firmei / PFA. Sunt necesare in procesul de facturare.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
         </div>
     )
 }
-export default TipuriLucrariTop;
+export default DateFiscaleTop;
