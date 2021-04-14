@@ -118,9 +118,12 @@ body {
 .uppercase { text-transform: uppercase; }
 a {
   text-decoration: none !important;
-  color: var(--blueHover);
+  color: var(--blue-hover);
   transition: var(--transition);
 }
 a:hover{
-  color:var(--blueMain) ;
+  color:var(--blue-main) ;
 }
+/*.buton{*/
+/*  color: red !important;*/
+/*}*/

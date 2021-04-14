@@ -53,6 +53,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import EmailIcon from '@material-ui/icons/Email';
 import logo from '../../utils/img/logo.png';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 
 const drawerWidth = 240;
@@ -169,7 +170,9 @@ const useStyles = makeStyles((theme) => ({
     },
     logoNav:{
         height: 50,
-        width:200
+        width:200,
+        // flexGrow: 1,
+
     },
     general:{
         // background: rgb(2,0,36),
@@ -220,7 +223,7 @@ export default function MiniDrawer() {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap className={classes.title}>
-                       Admin
+                      Admin
                     </Typography>
                     <Box display={{ xs: 'none', sm: 'block' }}>
                         <img src={logo} className={classes.logoNav}  style={{backgroundColor:"white"}} alt=""/>
@@ -230,7 +233,10 @@ export default function MiniDrawer() {
                         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
                                 className={classes.profile}
                         >
-                            Pro Member
+                            {/*Pro Member*/}
+                            <ListItemIcon>
+                                <AccountCircleIcon/>
+                            </ListItemIcon>
                         </Button>
                         <Menu
                             id="simple-menu"

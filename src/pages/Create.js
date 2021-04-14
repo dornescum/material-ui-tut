@@ -88,13 +88,17 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     formBig: {
-        padding: '0.5rem .1rem',
+        // padding: '0.5rem .1rem',
         // [theme.breakpoints.up('sm')]: {
             // paddingTop: theme.spacing(1),
             // paddingTop: 3,
             // paddingBottom: 3,
             // paddingLeft: theme.spacing(1),
             // paddingRight: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+        marginLeft: 2,
+        marginRight: 14
+
 
 
         // },
@@ -113,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     foto: {
-        padding: '0.7rem'
+        padding: '.3rem'
     },
     input: {
         display: 'none',
@@ -138,7 +142,7 @@ export default function Create() {
                             <Grid container className={classes.form}>
                                 {/*tip autorizat*/}
                                 <Grid item xs={12} lg={3} className={classes.formInput}>
-                                    <Typography variant='subtitle1' align='center' >Tip autorizat*</Typography>
+                                    <Typography variant='subtitle1' align='center' >Tip autorizat</Typography>
                                 </Grid>
                                 <Grid item xs={12} lg={9} className={classes.firma}>
                                     <Typography variant='subtitle1' align='center'>Firma</Typography>
@@ -157,32 +161,14 @@ export default function Create() {
                                 <Grid item xs={12} lg={6} className={classes.form}>
                                     <TextField
                                         fullWidth
-                                        label="numele firmei"
+                                        label="cod"
                                         variant='outlined'
                                         color='secondary'
                                         required>
                                     </TextField>
                                 </Grid>
                                 {/*======cod=====*/}
-                                <Grid item xs={12} lg={6} className={classes.form}>
-                                    <TextField
-                                        fullWidth
-                                        label="Cod"
-                                        variant='outlined'
-                                        color='secondary'
-                                        required
-                                    >
-                                    </TextField>
-                                </Grid>
-                                <Grid item xs={12} lg={6} className={classes.form}>
-                                    <TextField
-                                        fullWidth
-                                        label="numele firmei"
-                                        variant='outlined'
-                                        color='secondary'
-                                        required>
-                                    </TextField>
-                                </Grid>
+
                                 {/*=========Descriere=====*/}
                                 <Grid item xs={12}>
                                     <TextField
@@ -271,25 +257,10 @@ export default function Create() {
                                 {/*=====icons=======*/}
                                 <Grid item xs={12} lg={6} className={classes.foto}>
 
-                                    {/*<Fab color="primary" aria-label="add">*/}
-                                    {/*    <BackupIcon/>*/}
-                                    {/*</Fab>*/}
-
-                                    {/*<input*/}
-                                    {/*    accept="image/*"*/}
-                                    {/*    className={classes.input}*/}
-                                    {/*    id="contained-button-file"*/}
-                                    {/*    multiple*/}
-                                    {/*    type="file"*/}
-                                    {/*/>*/}
-                                    {/*<label htmlFor="contained-button-file">*/}
-                                    {/*    <Button variant="contained" color="primary" component="span">*/}
-                                    {/*        Upload*/}
-                                    {/*    </Button>*/}
-                                    {/*</label>*/}
 
 
-                                    <Card className={classes.root}>
+
+                                    <Card className={classes.root} elevation={5}>
                                         <CardActionArea>
                                             <CardMedia
                                                 className={classes.media}
@@ -306,12 +277,6 @@ export default function Create() {
                                             </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                            {/*<Button size="small" color="primary">*/}
-                                            {/*    Share*/}
-                                            {/*</Button>*/}
-                                            {/*<Button size="small" color="primary">*/}
-                                            {/*    Learn More*/}
-                                            {/*</Button>*/}
                                             <input
                                                 accept="image/*"
                                                 className={classes.input}
@@ -335,25 +300,10 @@ export default function Create() {
                                 </Grid>
                                 <Grid item xs={12} lg={6} className={classes.foto}>
 
-                                    {/*<Fab color="primary" aria-label="add">*/}
-                                    {/*    <BackupIcon/>*/}
-                                    {/*</Fab>*/}
-
-                                    {/*<input*/}
-                                    {/*    accept="image/*"*/}
-                                    {/*    className={classes.input}*/}
-                                    {/*    id="contained-button-file"*/}
-                                    {/*    multiple*/}
-                                    {/*    type="file"*/}
-                                    {/*/>*/}
-                                    {/*<label htmlFor="contained-button-file">*/}
-                                    {/*    <Button variant="contained" color="primary" component="span">*/}
-                                    {/*        Upload*/}
-                                    {/*    </Button>*/}
-                                    {/*</label>*/}
 
 
-                                    <Card className={classes.root} elevation={0}>
+
+                                    <Card className={classes.root} elevation={5}>
                                         <CardActionArea>
                                             <CardMedia
                                                 className={classes.media}
@@ -370,12 +320,7 @@ export default function Create() {
                                             </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                            {/*<Button size="small" color="primary">*/}
-                                            {/*    Share*/}
-                                            {/*</Button>*/}
-                                            {/*<Button size="small" color="primary">*/}
-                                            {/*    Learn More*/}
-                                            {/*</Button>*/}
+
                                             <input
                                                 accept="image/*"
                                                 className={classes.input}

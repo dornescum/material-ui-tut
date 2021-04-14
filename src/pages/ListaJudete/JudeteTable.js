@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,10 +9,20 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 // import Trophy from '../../utils/svg/trophy.svg'
+import buton from '../../style/index.css'
 
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
+    },
+    Button:{
+        backgroundColor:"var(--clr-pro)",
+        color:"var(--white)",
+        padding:".3rem .5rem",
+        width:"7rem",
+        "&:hover":{
+            backgroundColor:"var(--mc-color)",
+        }
     },
     btnPro:{
         backgroundColor:"var(--clr-pro)",
@@ -48,11 +58,12 @@ const useStyles = makeStyles({
 // function createData(name, calories, fat, carbs, protein) {
 //     return { name, calories, fat, carbs, protein };
 // }
-function createData(number, license, county, from, to, subscription, status, addCounty) {
-    // if(license ==='Pro'){
-    // license.classList.add('btnPro')
-    // }
-    return { number, license, county, from, to, subscription, status, addCounty };
+function createData(number, license, county, from, to, subscription, status, addCounty,) {
+    let licenseClass ='';
+    if(license ==='Pro'){
+        licenseClass='classes.btnPro'
+    }
+    return { number, license, county, from, to, subscription, status, addCounty, licenseClass };
 }
 
 const rows = [
@@ -64,6 +75,7 @@ const rows = [
 
 export default function JudeteTable() {
     const classes = useStyles();
+    const [standard, setStandard]=useState(true);
 
     return (
         <TableContainer component={Paper}>
@@ -91,8 +103,8 @@ export default function JudeteTable() {
                             <TableCell component="th" scope="row">
                                 {row.number}
                             </TableCell>
-                            <TableCell color='primary'>
-                                <Button className={classes.btnPro}>
+                            <TableCell color="primary">
+                                <Button className={classes.btnCounty }>
                                 {row.license}
                                 </Button>
                             </TableCell>
@@ -103,8 +115,7 @@ export default function JudeteTable() {
                             <TableCell>{row.to}</TableCell>
                             <TableCell>{row.subscription}</TableCell>
                             <TableCell>
-                                <Button className={classes.btnPro}
-                                >
+                                <Button className={classes.btnStandard}>
                                 {row.status}
                                 </Button>
                                 </TableCell>

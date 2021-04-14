@@ -86,7 +86,7 @@ const HomeTop = () => {
 
     return (
         <Paper className={classes.root} elevation={5}>
-            <Typography variant='h1' align='left' className={classes.title} gutterBottom> Date generale</Typography>
+            <Typography variant='h3' align='left' className={classes.title} gutterBottom> Date generale</Typography>
             <Typography paragraph align='left' className={classes.para}> Modificati datele firmei / PFA, astfel incat potentialii clienti sa-si formeze o imagine cat mai corecta despre dumneavoastra.
             </Typography>
             <Typography paragraph align='left' className={classes.para}> Luati in considerare faptul ca majoritatea campurilor vor fi incluse ca si criterii de selectie in formularul <a href="">Cauta firma</a> . Deci, este important ca gradul de completare al informatiilor sa fie cat mai ridicat.
