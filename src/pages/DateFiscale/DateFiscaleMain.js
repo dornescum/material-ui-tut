@@ -34,6 +34,18 @@ const useStyles = makeStyles((theme) => ({
             paddingTop: theme.spacing(1),
         },
     },
+    formCounty:{
+        padding: '0.5rem .1rem',
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: theme.spacing(0),
+        },
+        [theme.breakpoints.up('sm')]: {
+            paddingTop: theme.spacing(1),
+        },
+    },
+    formMain:{
+        padding: theme.spacing(1)
+    }
 }));
 const judete = [
     {
@@ -68,7 +80,7 @@ const DateFiscaleMain =(event)=>{
             <Grid container>
                 <Grid item xs={12}>
                         {/*------------------*/}
-                        <form noValidate autoComplete='off'>
+                        <form noValidate autoComplete='off' className={classes.formMain}>
                             <Grid container className={classes.form}>
 
                                 {/*======Nume CUI=====*/}
@@ -101,14 +113,7 @@ const DateFiscaleMain =(event)=>{
                                         required>
                                     </TextField>
                                 </Grid>
-                                <Grid item xs={12} lg={6} className={classes.form}>
-                                    {/*<TextField*/}
-                                    {/*    fullWidth*/}
-                                    {/*    label="Judet "*/}
-                                    {/*    variant='outlined'*/}
-                                    {/*    color='secondary'*/}
-                                    {/*    required>*/}
-                                    {/*</TextField>*/}
+                                <Grid item xs={12} lg={6} className={classes.formCounty}>
                                     <TextField
                                         id="outlined-select-currency-native"
                                         select
@@ -119,7 +124,6 @@ const DateFiscaleMain =(event)=>{
                                         SelectProps={{
                                             native: true,
                                         }}
-                                        // helperText="Please select your currency"
                                         variant="outlined"
                                     >
                                         {judete.map((option) => (
