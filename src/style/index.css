@@ -124,6 +124,6 @@ a {
 a:hover{
   color:var(--blue-main) ;
 }
-/*.buton{*/
-/*  color: red !important;*/
-/*}*/
+.buton{
+  color: red !important;
+}

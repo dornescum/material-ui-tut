@@ -60,9 +60,9 @@ const useStyles = makeStyles({
 // }
 function createData(number, license, county, from, to, subscription, status, addCounty,) {
     let licenseClass ='';
-    if(license ==='Pro'){
-        licenseClass='classes.btnPro'
-    }
+    // if(license ==='Pro'){
+    //     licenseClass='classes.btnPro'
+    // }
     return { number, license, county, from, to, subscription, status, addCounty, licenseClass };
 }
 
@@ -76,6 +76,10 @@ const rows = [
 export default function JudeteTable() {
     const classes = useStyles();
     const [standard, setStandard]=useState(true);
+    if (rows.license === 'Pro'){
+       // rows.license.style.backgroundColor="red";
+       rows.license.classList.add('buton')
+    }
 
     return (
         <TableContainer component={Paper}>
