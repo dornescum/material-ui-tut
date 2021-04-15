@@ -1,92 +1,79 @@
 import React, {useState} from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import {
-    Button,
-    FormControl,
-    FormControlLabel,
-    FormGroup,
-    FormLabel,
-    makeStyles,
-    Radio,
-    RadioGroup,
-} from "@material-ui/core";
-import TextField from '@material-ui/core/TextField'
-import {useMediaQuery} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 import {useTheme} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import HomeTop from "./HomeTop";
 import HomeFormCompany from "./HomeFormCompany";
-import Create from "../Create";
+// import Create from "../Create";
 
 
 const drawerWith = 240;
 const useStyles = makeStyles((theme) => ({
 
-    container: {
-        [theme.breakpoints.up('xs')]: {
-            fontSize: 11,
-            // margin: " 0 35px",
-            // padding:"5px 40px"
-            padding: theme.spacing(11)
-
-        },
-        [theme.breakpoints.up('sm')]: {
-            fontSize: 18,
-            // margin: " 0 45px",
-            // padding:"5px 50px",
-            padding: theme.spacing(1)
-
-        },
-        [theme.breakpoints.up('md')]: {
-            fontSize: 18,
-            // margin: " 0 45px",
-            // padding:"5px 50px"
-            padding: theme.spacing(1)
-
-        },
-        [theme.breakpoints.up('lg')]: {
-            fontSize: 28,
-            padding: theme.spacing(10)
-            // margin: " 0 10px",
-            // padding:"5px 50px"
-        },
-
-    },
-    title: {
-        display: 'flex',
-        justifyContent: "flex-start",
-        padding: '0.1rem 2rem',
-        borderBottom: '1px solid var(--grey-2)',
-        fontWeight: 'bold',
-        // backgroundColor: "#9ab973",
-        [theme.breakpoints.up('xs')]: {
-            fontSize: 11
-        },
-        [theme.breakpoints.up('sm')]: {
-            fontSize: 19
-        },
-        [theme.breakpoints.up('md')]: {
-            fontSize: 22
-        },
-        [theme.breakpoints.up('lg')]: {
-            fontSize: 24
-        },
-        // transition: "all .3s ease",
-        // "&:hover":{
-        //     backgroundColor:"red",
-        //     fontSize:71
-        // }
-    },
-    field: {
-        marginTop: '1rem',
-        marginBottom: '1rem',
-        display: 'block'
-    },
+    // container: {
+    //     [theme.breakpoints.up('xs')]: {
+    //         fontSize: 11,
+    //         // margin: " 0 35px",
+    //         // padding:"5px 40px"
+    //         padding: theme.spacing(11)
+    //
+    //     },
+    //     [theme.breakpoints.up('sm')]: {
+    //         fontSize: 18,
+    //         // margin: " 0 45px",
+    //         // padding:"5px 50px",
+    //         padding: theme.spacing(1)
+    //
+    //     },
+    //     [theme.breakpoints.up('md')]: {
+    //         fontSize: 18,
+    //         // margin: " 0 45px",
+    //         // padding:"5px 50px"
+    //         padding: theme.spacing(1)
+    //
+    //     },
+    //     [theme.breakpoints.up('lg')]: {
+    //         fontSize: 28,
+    //         padding: theme.spacing(10)
+    //         // margin: " 0 10px",
+    //         // padding:"5px 50px"
+    //     },
+    //
+    // },
+    // title: {
+    //     display: 'flex',
+    //     justifyContent: "flex-start",
+    //     padding: '0.1rem 2rem',
+    //     borderBottom: '1px solid var(--grey-2)',
+    //     fontWeight: 'bold',
+    //     // backgroundColor: "#9ab973",
+    //     [theme.breakpoints.up('xs')]: {
+    //         fontSize: 11
+    //     },
+    //     [theme.breakpoints.up('sm')]: {
+    //         fontSize: 19
+    //     },
+    //     [theme.breakpoints.up('md')]: {
+    //         fontSize: 22
+    //     },
+    //     [theme.breakpoints.up('lg')]: {
+    //         fontSize: 24
+    //     },
+    //     // transition: "all .3s ease",
+    //     // "&:hover":{
+    //     //     backgroundColor:"red",
+    //     //     fontSize:71
+    //     // }
+    // },
+    // field: {
+    //     marginTop: '1rem',
+    //     marginBottom: '1rem',
+    //     display: 'block'
+    // },
     root: {
         flexGrow: 1,
-        padding: theme.spacing(0),
+        padding: theme.spacing(1),
         // margin: "1rem",
         // padding: "60px 50px",
         [theme.breakpoints.down('xs')]: {
@@ -142,11 +129,11 @@ export default function Home() {
 
                 </Grid>
                 <Grid item xs={12} sm={8} md={10} xl={11}>
-                    <Paper className={classes.paper}>
+                    {/*<Paper className={classes.paper}>*/}
                         <HomeTop/>
-                        {/*<HomeFormCompany/>*/}
-                        <Create />
-                    </Paper>
+                        <HomeFormCompany/>
+                        {/*<Create />*/}
+                    {/*</Paper>*/}
                 </Grid>
             </Grid>
         </div>

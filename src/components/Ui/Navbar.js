@@ -5,7 +5,6 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,8 +14,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Link from '@material-ui/core/Link';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DateRangeIcon from '@material-ui/icons/DateRange';
@@ -27,7 +24,6 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
 import ContactsIcon from '@material-ui/icons/Contacts';
-// import TipuriAbonamente from "../../pages/TipuriAbonamente/TipuriAbonamente";
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import BallotIcon from '@material-ui/icons/Ballot';
 import HistoryIcon from '@material-ui/icons/History';
@@ -35,26 +31,13 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Box from "@material-ui/core/Box";
-
-// import {Route} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
-
-// import { makeStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import EmailIcon from '@material-ui/icons/Email';
 import logo from '../../utils/img/logo.png';
-import BrowserRouter from 'react-router-dom'
-// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import BrowserRouter from 'react-router-dom';
+import {light} from "@material-ui/core/styles/createPalette";
 
 
 const drawerWidth = 240;
@@ -62,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         justifyContent: "flex-end",
-        alignContent:"center",
+        alignContent: "center",
         // width: '100%',
         // maxWidth: 360,
         // backgroundColor: theme.palette.background.paper,
@@ -157,28 +140,44 @@ const useStyles = makeStyles((theme) => ({
     //     //
     //     }
     // },
-    profile:{
-       fontSize:14,
+    profile: {
+        fontSize: 14,
         // color: theme.palette.colors
-       //  flexGrow:1,
-       //  paddingLeft: '50rem'
+        //  flexGrow:1,
+        //  paddingLeft: '50rem'
         color: theme.palette.common.white,
 
     },
     title: {
         flexGrow: 1,
     },
-    logoNav:{
+    logoNav: {
         height: 60,
-        width:200,
+        width: 200,
         padding: "0"
         // flexGrow: 1,
 
     },
-    general:{
-        // background: rgb(2,0,36),
+    general: {
         background: "linear-gradient(90deg, rgba(228,228,231,1) 23%, rgba(228,218,218,0.31974796754639356) 60%, rgba(255,255,255,0.31974796754639356) 86%)"
-}
+    },
+    iconMain: {
+        color: "var(--mc-color)",
+        // color: "var(--clr-judet)",
+        transition: "var(--transition)",
+        '&:hover': {
+            color: "var(--blue-main)"
+        }
+    },
+    icon: {
+        color: "var(--mc-color)",
+        transition: "var(--transition)",
+        '&:hover': {
+            // color: "var(--mc-color)"
+            color: "var(--blue-main)"
+        }
+    }
+
 }));
 
 export default function MiniDrawer(props) {
@@ -227,7 +226,7 @@ export default function MiniDrawer(props) {
                     <Typography variant="h6" noWrap className={classes.title}>
 
                     </Typography>
-                    <Box display={{ xs: 'none', sm: 'block' }}>
+                    <Box display={{xs: 'none', sm: 'block'}}>
                         {/*<img src={logo} className={classes.logoNav}  style={{backgroundColor:"white"}} alt=""/>*/}
 
                     </Box>
@@ -236,9 +235,9 @@ export default function MiniDrawer(props) {
 
                         >
                             {/*Pro Member*/}
-                            <ListItemIcon  style={{color:"white"}}>
+                            <ListItemIcon style={{color: "white"}}>
                                 Pro Member
-                                <AccountCircleIcon style={{color:"white" , paddingLeft:"10px"}}/>
+                                <AccountCircleIcon style={{color: "white", paddingLeft: "10px"}}/>
                             </ListItemIcon>
                         </Button>
                         <Menu
@@ -250,7 +249,7 @@ export default function MiniDrawer(props) {
                         >
                             <MenuItem onClick={handleClose}>Profile</MenuItem>
                             <MenuItem onClick={handleClose}>My account</MenuItem>
-                            <MenuItem onClick={ handleClose}>
+                            <MenuItem onClick={handleClose}>
                                 Log Out
                             </MenuItem>
                         </Menu>
@@ -279,20 +278,20 @@ export default function MiniDrawer(props) {
                 </div>
                 <Divider/>
                 <List id='listLinks'>
-                    <ListItem style={{padding:"0 16px"}}>
+                    <ListItem style={{padding: "0 16px"}}>
                         <ListItemAvatar>
-                            <img src={logo} className={classes.logoNav}  alt=""/>
+                            <img src={logo} className={classes.logoNav} alt=""/>
                         </ListItemAvatar>
                     </ListItem>
-                    <ListItem  className={classes.general}>
-                        <ListItemIcon>
+                    <ListItem className={classes.general}>
+                        <ListItemIcon className={classes.iconMain}>
                             <HomeIcon/>
                         </ListItemIcon>
                         <ListItemText primary={"Datele firmei /PFA"}/>
                     </ListItem>
                     <Link href="/">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <HomeIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Date principale"} className={classes.link}/>
@@ -300,7 +299,7 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/desprefirma1">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <AccountCircleIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Despre firma"} className={classes.link}/>
@@ -308,11 +307,9 @@ export default function MiniDrawer(props) {
                     </Link>
 
 
-
-
                     <Link href="/datefiscale">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <DateRangeIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Date fiscale"} className={classes.link}/>
@@ -320,7 +317,7 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/galeriefoto">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <AddAPhotoIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Galerie foto"} className={classes.link}/>
@@ -328,15 +325,15 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/tipurilucrari">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <WorkIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Tipuri de lucrari"} className={classes.link}/>
                         </ListItem>
                     </Link>
                     {/*===========*/}
-                    <ListItem  className={classes.general}>
-                        <ListItemIcon>
+                    <ListItem className={classes.general}>
+                        <ListItemIcon className={classes.iconMain}>
                             <EmailIcon/>
                         </ListItemIcon>
                         <ListItemText primary={"Contact"}/>
@@ -344,7 +341,7 @@ export default function MiniDrawer(props) {
                     {/*===========*/}
                     <Link href="/mesaje">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <MessageIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Mesaje"} className={classes.link}/>
@@ -352,7 +349,7 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/datecontact">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <ContactsIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Date contact"} className={classes.link}/>
@@ -360,8 +357,8 @@ export default function MiniDrawer(props) {
                     </Link>
 
                     {/*======abonamente=====*/}
-                    <ListItem  className={classes.general}>
-                        <ListItemIcon>
+                    <ListItem className={classes.general}>
+                        <ListItemIcon className={classes.iconMain}>
                             <EmailIcon/>
                         </ListItemIcon>
                         <ListItemText primary={"Abonamente"}/>
@@ -370,7 +367,7 @@ export default function MiniDrawer(props) {
 
                     <Link href="/tipuriabonamente">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <CreditCardIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Tipuri abonamente"} className={classes.link}/>
@@ -378,7 +375,7 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/listajudete">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <DateRangeIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Lista judete"} className={classes.link}/>
@@ -387,7 +384,7 @@ export default function MiniDrawer(props) {
 
                     <Link href="/istoric">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <HistoryIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Istoric"} className={classes.link}/>
@@ -395,7 +392,7 @@ export default function MiniDrawer(props) {
                     </Link>
                     <Link href="/modalitatiplata">
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon className={classes.icon}>
                                 <AttachMoneyIcon/>
                             </ListItemIcon>
                             <ListItemText primary={"Modalitai de plata"} className={classes.link}/>
@@ -403,8 +400,8 @@ export default function MiniDrawer(props) {
                     </Link>
 
                     {/*======Statistici=====*/}
-                    <ListItem  className={classes.general}>
-                        <ListItemIcon>
+                    <ListItem className={classes.general}>
+                        <ListItemIcon className={classes.iconMain}>
                             <EmailIcon/>
                         </ListItemIcon>
                         <ListItemText primary={"Statistici"}/>
@@ -437,10 +434,8 @@ export default function MiniDrawer(props) {
                     </Link>
 
 
-
-
                     {/*======administrativ=====*/}
-                    <ListItem  className={classes.general}>
+                    <ListItem className={classes.general}>
                         <ListItemIcon>
                             <EmailIcon/>
                         </ListItemIcon>
