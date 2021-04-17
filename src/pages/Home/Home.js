@@ -106,8 +106,14 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
+        // padding: theme.spacing(2),
+        // textAlign: 'center',
+        // color: theme.palette.text.secondary,
+        // ====galerie foto
+        paddingTop: theme.spacing(2),
+        // paddingLeft: theme.spacing(12),
+        paddingRight: theme.spacing(2),
+        // textAlign: 'center',
         color: theme.palette.text.secondary,
     },
     margin: {

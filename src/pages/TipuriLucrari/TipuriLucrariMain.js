@@ -59,7 +59,6 @@ export default function TipuriLucrariMain() {
                             <FormControlLabel
                                 control={<Checkbox checked={c1} onChange={handleChange} name="c1" color="primary"/> }
                                 label="cadastru și intabulare apartament"
-
                             />
                         </FormGroup>
                         <FormGroup>

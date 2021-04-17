@@ -24,7 +24,7 @@ const TipuriLucrariTop= () =>{
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography className={classes.heading} variant='h4'>Tipuri de lucrari</Typography>
+                    <Typography className={classes.heading} variant='h5'>Tipuri de lucrari</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>

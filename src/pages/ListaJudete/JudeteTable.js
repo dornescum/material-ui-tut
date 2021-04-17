@@ -60,9 +60,13 @@ const useStyles = makeStyles({
 // }
 function createData(number, license, county, from, to, subscription, status, addCounty,) {
     let licenseClass ='';
-    // if(license ==='Pro'){
-    //     licenseClass='classes.btnPro'
-    // }
+    if(license ==='Pro'){
+        licenseClass='buton-pro'
+    }
+    if(license ==='Standard'){
+        licenseClass='buton'
+    }
+
     return { number, license, county, from, to, subscription, status, addCounty, licenseClass };
 }
 
@@ -70,17 +74,27 @@ const rows = [
     createData(1, 'Pro', 'Normandia', '14.11.2020', '13.11.2021', '0.00 Ron', 'Activ', 'Prelungire'),
     createData(2, 'Pro', 'Normandia', '14.11.2020', '13.11.2021', '0.00 Ron', 'Activ', 'Prelungire'),
     createData(3, 'Standard', 'Normandia', '14.11.2020', '13.11.2021', '0.00 Ron', 'Activ', 'Prelungire'),
-    createData(4, 'Pro', 'Normandia', '14.11.2020', '13.11.2021', '0.00 Ron', 'Activ', 'Prelungire'),
+    createData(4, 'Standard', 'Normandia', '14.11.2020', '13.11.2021', '0.00 Ron', 'Activ', 'Prelungire'),
 ];
 
 export default function JudeteTable() {
     const classes = useStyles();
-    const [standard, setStandard]=useState(true);
-    if (rows.license === 'Pro'){
-       // rows.license.style.backgroundColor="red";
-       rows.license.classList.add('buton')
-    }
-
+    // const [standard, setStandard]=useState(true);
+    // const [value, setValue]= useState('standard')
+    // rows.license = 'standard';
+    // if (rows.license === 'Pro'){
+    //     rows.license='Pro'
+    //    rows.license.classList.add('buton-pro');
+    //     // rows.license.style.backgroundColor="red";
+    // }
+// const chageColor = (e, i) =>{
+//     setValue('Pro')
+//     console.log(e, i)
+//     if (setValue){
+//            // rows.license.classList.add('classes.btnPro');
+//
+//     }
+// }
     return (
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
@@ -108,7 +122,8 @@ export default function JudeteTable() {
                                 {row.number}
                             </TableCell>
                             <TableCell color="primary">
-                                <Button className={classes.btnCounty }>
+                                {/*am scos btnCounty*/}
+                                <Button className={row.licenseClass}>
                                 {row.license}
                                 </Button>
                             </TableCell>

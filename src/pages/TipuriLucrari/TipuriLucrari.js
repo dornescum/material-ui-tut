@@ -66,20 +66,11 @@ export default function TipuriLucarari() {
     return (
         <Grid  className={classes.root }>
             <Grid  container alignItems='center'>
-
                 <Grid item xs={false} sm={2} xl={1}/>
                 <Grid item  xs={12} sm={10} xl={11} className={classes.root}>
-
-
                         <TipuriLucarariTop/>
                         <TipuriLucrariMain />
-
-
-
-
-
                 </Grid>
-
             </Grid>
         </Grid>
 
