@@ -55,9 +55,7 @@ const useStyles = makeStyles({
 
 });
 
-// function createData(name, calories, fat, carbs, protein) {
-//     return { name, calories, fat, carbs, protein };
-// }
+
 function createData(number, license, county, from, to, subscription, status, addCounty,) {
     let licenseClass ='';
     if(license ==='Pro'){
